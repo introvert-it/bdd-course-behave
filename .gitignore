@@ -51,3 +51,5 @@ Thumbs.db
 # Python
 venv
 
+# project
+env_configuration.json

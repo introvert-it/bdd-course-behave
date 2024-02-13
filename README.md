@@ -2,8 +2,12 @@
 
 ### How to run tests
 1. Create a `virtualenv` using PyCharm or in terminal (`virtualenv venv`).
-2. Activate virtualenv. On Linux / MacOS: `. ./venv/bin/activate`, on Windows: `.\venv\Scripts\activate`. If
-    you use PyCharm for running the tests, just skip this step ;)
+2. Activate virtualenv. 
+   - On Linux / MacOS: `. ./venv/bin/activate`
+   - on Windows: `.\venv\Scripts\activate`
+   - If you use PyCharm for running the tests, please open `File -> Settings -> Project: bdd-course-behave -> 
+   Python interpreter` and make sure that your virtualenv is selected. If not, click "add interpreter" -> 
+   "add local interpreter", select "existing" and pick the one that you just created. Click "Apply".
 3. Install the requirements for the project. Terminal: `pip install -r requirements.txt`; 
 PyCharm: open `requirements.txt` file, click in it and choose the option to install the requirements.
 4. Create test configuration:
@@ -13,3 +17,8 @@ PyCharm: open `requirements.txt` file, click in it and choose the option to inst
    - put the following line into it: `{"app_url": "<app url>"}`
 5. Now you can run the tests. To do that, please open the terminal and run:
     `behave tests/features`
+
+### How to set up behave debugging in PyCharm community edition
+Please, follow these simple steps: 
+https://levelup.gitconnected.com/how-to-use-pycharm-ce-debugger-with-behave-3396f5b0865d.
+
