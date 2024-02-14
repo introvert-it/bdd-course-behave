@@ -5,7 +5,6 @@ from behave import fixture, use_fixture
 # https://behave.readthedocs.io/en/stable/fixtures.html
 
 
-
 @fixture
 def pickles_storage(context):
     print("Creating pickles storage")
@@ -26,8 +25,9 @@ def before_tag(context, tag):
 
 
 def before_feature(context, scenario):
-    use_fixture(pickles_storage, context)
+    pass
 
 
 def before_scenario(context, scenario):
-    pass
+    use_fixture(pickles_storage, context)
+    # you could also just do context.pickles = [] here to create this list before feature starts
