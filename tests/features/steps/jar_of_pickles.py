@@ -24,14 +24,14 @@ def step_definition(context):
 
 @then("user should be able to take the lid off")
 def step_definition(context):
-    context.pickles[0]["closed"] = False
+    context.pickles[context.active_jar_index]["closed"] = False
 
 
 @then('jar of pickles number {number:d} should be opened')
 def step_definition(context, number):
-    assert context.pickles[0]["closed"] == False
+    assert context.pickles[number - 1]["closed"] == False
 
 
 @then('jar of pickles number {number:d} should be closed')
 def step_definition(context, number):
-    assert context.pickles[1]["closed"] == True
+    assert context.pickles[number - 1]["closed"] == True
