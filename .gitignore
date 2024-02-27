@@ -53,3 +53,5 @@ venv
 
 # project
 env_configuration.json
+allure-report
+allure-results
