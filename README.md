@@ -22,3 +22,21 @@ PyCharm: open `requirements.txt` file, click in it and choose the option to inst
 Please, follow these simple steps: 
 https://levelup.gitconnected.com/how-to-use-pycharm-ce-debugger-with-behave-3396f5b0865d.
 
+### How to create allure results
+
+1. Install allure standalone using [these]([allure-report](allure-report)
+[allure-results](allure-results)) steps. Please, note that you need Java
+installed before you try installing allure standalone.
+2. Open terminal.
+3. Run `pip install requirements.txt` to make sure that `allure-pytest-bdd`
+is installed.
+4. Run tests with allure reports option: 
+`behave -f allure_behave.formatter:AllureFormatter -o allure-results ./tests/features`
+5. Generate allure report: `allure generate`
+6. Open allure report: `allure open`, you should see the report open in 
+default browser.
+
+_Note:_ when you're done, click Ctrl + C in the terminal to stop the process
+to stop running allure process.
+
+More info about allure can be found [here](https://allurereport.org/docs/how-it-works/)
