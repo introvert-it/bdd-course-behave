@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+     tools {
+        allure 'allure'
+    }
+
+    stages {
+        stage('Run tests') {
+            agent {
+                 dockerfile {
+                    filename 'Dockerfile'
+                 }
+            }
+            steps {
+                echo 'Running tests'
+                sh 'behave -f allure_behave.formatter:AllureFormatter -o allure-results ./tests/features'
+            }
+        }
+    }
+
+    post {
+        always {
+            script {
+                ws (env.WORKSPACE) {
+                    allure results: [[path: './allure-results']]
+                }
+            }
+        }
+    }
+}
